@@ -1,0 +1,29 @@
+{
+  "name": "aa-hackathon",
+  "author": {
+    "name": "Shreyash",
+    "email": "webdevcaptain@gmail.com"
+  },
+  "version": "0.0.1",
+  "main": "server.js",
+  "license": "GPL",
+  "dependencies": {
+    "@sendgrid/mail": "^7.2.1",
+    "axios": "^0.19.2",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "email-validator": "^2.0.4",
+    "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "helmet": "^3.23.3",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.25",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "scripts": {
+    "dev": "env-cmd -f ./config/dev.env nodemon server.js"
+  }
+}
