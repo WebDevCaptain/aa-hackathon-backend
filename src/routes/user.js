@@ -1,7 +1,9 @@
 const express = require('express');
 const validateEmail = require('email-validator');
 
+// Middlewares
 const authMiddleware = require('../middleware/authentication');
+const signupRateLimiter = require('../middleware/signup_rate_limit');
 
 const router = new express.Router();
 
@@ -37,7 +39,7 @@ router.post('/users/login', async (req, res) => {
   }
 });
 
-router.post('/users/signup', async (req, res) => {
+router.post('/users/signup', signupRateLimiter, async (req, res) => {
   const user = new User(req.body);
 
   try {
